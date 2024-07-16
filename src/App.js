@@ -123,6 +123,7 @@ export default function App() {
         placeholder='Adı'
         onChange={handleChange}
         name='firstName'
+        value={formData.firstName}
       />
 
       <input
@@ -130,6 +131,7 @@ export default function App() {
         placeholder='Soyadı'
         onChange={handleChange}
         name='lastName'
+        value={formData.lastName}
       />
 
       <input
@@ -137,6 +139,7 @@ export default function App() {
         placeholder='Email'
         onChange={handleChange}
         name='email'
+        value={formData.email}
       />
 
       <fieldset>
@@ -151,6 +154,7 @@ export default function App() {
               name='privacyResponse'
               value='yes'
               onChange={handleChange}
+              checked={formData.privacyResponse === 'yes'}
             />
             Evet
           </label>
@@ -161,8 +165,9 @@ export default function App() {
               id='no'
               name='privacyResponse'
               value='no'
-              defaultChecked
+              //defaultChecked
               onChange={handleChange}
+              checked={formData.privacyResponse === 'no'}
             />
             Hayır
           </label>
@@ -174,6 +179,7 @@ export default function App() {
               name='privacyResponse'
               value='absolutely'
               onChange={handleChange}
+              checked={formData.privacyResponse === 'absolutely'}
             />
             Kesinlikle
           </label>
@@ -186,7 +192,7 @@ export default function App() {
           değerlendirirsiniz?
         </legend>
 
-        <select onChange={handleChange} name='rating' defaultValue='10'>
+        <select onChange={handleChange} name='rating' value={formData.rating} defaultValue="10">
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -204,6 +210,7 @@ export default function App() {
         <input
           type='checkbox'
           name='marketingResponse'
+          checked={formData.marketingResponse}
           onChange={handleChange}
         />
 
